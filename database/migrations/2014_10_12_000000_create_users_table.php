@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('role_id')->nullable()->default('4'); //disabled
             $table->string('city')->nullable();
             $table->string('state')->nullable();
-            $table->string('country')->nullable();
+            $table->string('country_id')->nullable();
             $table->longText('skills')->nullable();
             $table->rememberToken();
             $table->softDeletes();
