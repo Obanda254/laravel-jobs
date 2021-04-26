@@ -15,6 +15,9 @@ class CreateAccountsTable extends Migration
     {
         Schema::create('accounts', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('user_id');
+            $table->double('balance', 10, 2)->default('0.0');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

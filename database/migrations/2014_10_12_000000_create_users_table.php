@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('state')->nullable();
             $table->string('country_id')->nullable();
             $table->longText('skills')->nullable();
+            $table->tinyInteger('is_actively_seeking_employment')->default(1);
             $table->rememberToken();
             $table->softDeletes();
             $table->timestamps();

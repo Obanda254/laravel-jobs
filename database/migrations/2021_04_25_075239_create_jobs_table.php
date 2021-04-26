@@ -15,6 +15,16 @@ class CreateJobsTable extends Migration
     {
         Schema::create('jobs', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('user_id');
+            $table->integer('organisation_id')->nullable();
+            $table->integer('country_id')->nullable();
+            $table->integer('title');
+            $table->integer('skills_required');
+            $table->integer('description');
+            $table->string('work_type')->default('onsite'); //remote //both
+            $table->string('job_type')->default('full time'); //part time //contract
+            $table->string('status')->nullable()->default('open'); //closed
+            $table->softDeletes();
             $table->timestamps();
         });
     }

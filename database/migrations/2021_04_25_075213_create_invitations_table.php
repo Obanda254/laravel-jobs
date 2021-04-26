@@ -15,6 +15,17 @@ class CreateInvitationsTable extends Migration
     {
         Schema::create('invitations', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('user_id'); //sender id
+            $table->string('sender_contact')->nullable();
+            $table->integer('receiver_user_id')->nullable();
+            $table->integer('organisation_id')->nullable();
+            $table->integer('job_id')->nullable();
+            $table->string('interview_statud')->nullable()->default('yet to be interviewed'); //interviewed
+            $table->dateTime('date_of_interview')->nullable();
+            $table->longText('invitation_note')->nullable();
+            $table->longText('employer_interview_note')->nullable();
+            $table->longText('jobseeker_post_interview_review')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

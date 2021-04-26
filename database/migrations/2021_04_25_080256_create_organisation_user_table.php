@@ -15,6 +15,12 @@ class CreateOrganisationUserTable extends Migration
     {
         Schema::create('organisation_user', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('user_id');
+            $table->integer('organisation_id');
+            $table->date('start_date')->nullable();
+            $table->date('end_date')->nullable();
+            $table->string('role')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
